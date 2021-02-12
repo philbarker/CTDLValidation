@@ -5,32 +5,41 @@
 @prefix ceshapes: <https://purl.org/ctdl/shapes/shacl/> .
 @base <https://purl.org/ctdl/shapes/shacl/CredentialOrganization> .
 
+## Check at least one node of type ceterms:CredentialOrganization exists
+ceshapes:NodePresent a sh:NodeShape ;
+  sh:targetNode ceterms:CredentialOrganization ;
+  sh:property [
+    sh:path [ sh:inversePath rdf:type ] ;
+    sh:minCount 1 ;
+  ] ;
+  sh:message "There must be at least one CredentialOrganization node"@en
+.
+
+## Main shape for ceterms:CredentialOrganization Nodes
 ceshapes:CredentialOrganizationShape a sh:NodeShape ;
   rdfs:label "Credential Organization Shape"@en ;
   rdfs:comment "Shape to validate Credential Organization instances"@en ;
   sh:targetClass ceterms:CredentialOrganization ;
-  sh:property <#nameShape> ;
-  sh:property <#descriptionShape> ;
+  sh:property <#name> ;
+  sh:property <#description> ;
   sh:property <#agentType> ;
   sh:property <#agentSectorType> ;
-  sh:property <#subjectWebpageShape> ;
+  sh:property <#subjectWebpage> ;
   sh:property <#ctid> ;
-  sh:or ( <#addressShape> <#emailShape> ) ;
-  sh:message "These terms must be included to publish to the registry."@en
+  sh:or ( <#address> <#email> ) ;
 .
 
 ## Required Properties
-<#nameShape> a sh:PropertyShape ;
+<#name> a sh:PropertyShape ;
     sh:name "Name" ;
     sh:description "Name or title of the resource." ;
     sh:path ceterms:name ;
     sh:datatype rdf:langString ;
     sh:minCount 1 ;
-    sh:severity sh:Violation ;
-    sh:resultMessage "This property is required"
+    sh:severity sh:Violation
 .
 
-<#descriptionShape> a sh:PropertyShape ;
+<#description> a sh:PropertyShape ;
     sh:name "Description" ;
     sh:description "Statement, characterization or account of the entity." ;
     sh:path ceterms:description ;
@@ -39,7 +48,7 @@ ceshapes:CredentialOrganizationShape a sh:NodeShape ;
     sh:severity sh:Violation ;
 .
 
-<#subjectWebpageShape> a sh:PropertyShape ;
+<#subjectWebpage> a sh:PropertyShape ;
     sh:name "Subject Webpage" ;
     sh:description "Webpage that describes this entity." ;
     sh:path ceterms:subjectWebpage ;
@@ -48,7 +57,7 @@ ceshapes:CredentialOrganizationShape a sh:NodeShape ;
     sh:severity sh:Violation ;
 .
 
-<#addressShape>  a  sh:PropertyShape ;
+<#address>  a  sh:PropertyShape ;
    sh:name "Address" ;
    sh:description "Particulars describing the location of the place." ;
    sh:path ceterms:address ;
@@ -57,7 +66,7 @@ ceshapes:CredentialOrganizationShape a sh:NodeShape ;
    sh:severity sh:Violation ;
 .
 
-<#emailShape> a  sh:PropertyShape ;
+<#email> a  sh:PropertyShape ;
    sh:name "Email" ;
    sh:description "Email address of the organization or person." ;
    sh:path ceterms:email ;
@@ -81,7 +90,7 @@ ceshapes:CredentialOrganizationShape a sh:NodeShape ;
   sh:path ceterms:agentSectorType ;
   sh:minCount 1 ;
   sh:nodeKind sh:BlankNode ;
-  sh:severity sh:Violation ;
+  sh:severity sh:Violation 
 .
 
 <#ctid> a sh:PropertyShape ;
@@ -90,12 +99,47 @@ ceshapes:CredentialOrganizationShape a sh:NodeShape ;
   sh:path ceterms:ctid ;
   sh:minCount 1 ;
   sh:nodeKind sh:Literal ;
-  sh:severity sh:Violation ;
+  sh:pattern "ce-[0-9a-f]{8}(-[0-9a-f]{4}){3}-[0-9a-f]{12}" ;
+  sh:severity sh:Violation
 .
 
-<#AddressShape>  a  sh:NodeShape ;
+## Validation of Addresses
+<#Address>  a  sh:NodeShape ;
+#TODO: add property constraints
   rdfs:label "Address Shape"@en ;
   rdfs:comment "Validates Addresses in Credential Organization instances"@en ;
   sh:targetObjectsOf ceterms:address ;
+  sh:severity sh:Violation ;
+  sh:nodeKind sh:BlankNodeOrIRI ;
+.
+
+## Validation of Alignment Objects
+# To do agentSectorType alignment object shape
+
+<#AgentTypeAlignment> a sh:NodeShape ;
+  rdfs:label "Agent Type Alignment Object Shape"@en ;
+  rdfs:comment "Validates Alignment Objects used for agentType in Credential Organization instances"@en ;
+  sh:targetObjectsOf ceterms:agentType ;
+  sh:severity sh:Violation ;
+  sh:nodeKind sh:BlankNodeOrIRI ;
+  sh:property <#agentTypeFramework> ;
+  sh:property <#targetNode> ;
+.
+
+<#agentTypeFramework> a sh:PropertyShape ;
+  sh:name "framework" ;
+  sh:description "..."@en ;
+  sh:path ceterms:framework ;
+  sh:nodeKind sh:IRI ;
+  sh:hasValue ceterms:OrganizationType ;
+  sh:severity sh:Violation
+.
+
+<#targetNode> a sh:PropertyShape ;
+  sh:name "target node" ;
+  sh:description "..."@en ;
+  sh:path ceterms:targetNode ;
+  sh:minCount 1 ;
+  sh:nodeKind sh:IRI ;
   sh:severity sh:Violation ;
 .
