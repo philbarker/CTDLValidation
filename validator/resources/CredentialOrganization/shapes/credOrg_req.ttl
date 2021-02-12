@@ -1,0 +1,101 @@
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ceterms:  <http://purl.org/ctdl/terms/> .
+@prefix ceshapes: <http://purl.org/ctdl/shapes/shacl/> .
+# @base <http://purl.org/ctdl/shapes/shacl/CredentialOrganization> .
+
+ceshapes:CredentialOrganizationShape a sh:NodeShape ;
+  rdfs:label "Credential Organization Shape"@en ;
+  rdfs:comment "Shape to validate Credential Organization instances"@en ;
+  sh:targetClass ceterms:CredentialOrganization ;
+  sh:property <#nameShape> ;
+  sh:property <#descriptionShape> ;
+  sh:property <#agentType> ;
+  sh:property <#agentSectorType> ;
+  sh:property <#subjectWebpageShape> ;
+  sh:property <#ctid> ;
+  sh:or ( <#addressShape> <#emailShape> ) ;
+  sh:message "These terms must be included to publish to the registry."@en
+.
+
+## Required Properties
+<#nameShape> a sh:PropertyShape ;
+    sh:name "Name" ;
+    sh:description "Name or title of the resource." ;
+    sh:path ceterms:name ;
+    sh:datatype rdf:langString ;
+    sh:minCount 1 ;
+    sh:severity sh:Violation ;
+    sh:resultMessage "This property is required"
+.
+
+<#descriptionShape> a sh:PropertyShape ;
+    sh:name "Description" ;
+    sh:description "Statement, characterization or account of the entity." ;
+    sh:path ceterms:description ;
+    sh:datatype rdf:langString ;
+    sh:minCount 1 ;
+    sh:severity sh:Violation ;
+.
+
+<#subjectWebpageShape> a sh:PropertyShape ;
+    sh:name "Subject Webpage" ;
+    sh:description "Webpage that describes this entity." ;
+    sh:path ceterms:subjectWebpage ;
+    sh:minCount 1 ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Violation ;
+.
+
+<#addressShape>  a  sh:PropertyShape ;
+   sh:name "Address" ;
+   sh:description "Particulars describing the location of the place." ;
+   sh:path ceterms:address ;
+   sh:minCount 1 ;
+   sh:node sh:BlankNode ;
+   sh:severity sh:Violation ;
+.
+
+<#emailShape> a  sh:PropertyShape ;
+   sh:name "Email" ;
+   sh:description "Email address of the organization or person." ;
+   sh:path ceterms:email ;
+   sh:minCount 1 ;
+   sh:nodeKind sh:Literal ;
+   sh:severity sh:Violation ;
+.
+
+<#agentType> a sh:PropertyShape ;
+  sh:name "Agent Type" ;
+  sh:description "Type of organization such as educational institution, credentialing organization or quality assurance body; select from an existing enumeration of such types." ;
+  sh:path ceterms:agentType ;
+  sh:minCount 1 ;
+  sh:nodeKind sh:BlankNode ;
+  sh:severity sh:Violation ;
+.
+
+<#agentSectorType> a sh:PropertyShape ;
+  sh:name "Agent SectorType" ;
+  sh:description "Type of sociological, economic, or political subdivision served by an organization; select from an existing enumeration of such types." ;
+  sh:path ceterms:agentSectorType ;
+  sh:minCount 1 ;
+  sh:nodeKind sh:BlankNode ;
+  sh:severity sh:Violation ;
+.
+
+<#ctid> a sh:PropertyShape ;
+  sh:name "CTID" ;
+  sh:description "Globally unique Credential Transparency Identifier (CTID) by which the creator, owner or provider of a resource recognizes it in transactions with the external environment (e.g., in verifiable claims involving the resource)." ;
+  sh:path ceterms:ctid ;
+  sh:minCount 1 ;
+  sh:nodeKind sh:Literal ;
+  sh:severity sh:Violation ;
+.
+
+<#AddressShape>  a  sh:NodeShape ;
+  rdfs:label "Address Shape"@en ;
+  rdfs:comment "Validates Addresses in Credential Organization instances"@en ;
+  sh:targetObjectsOf ceterms:address ;
+  sh:severity sh:Violation ;
+.
