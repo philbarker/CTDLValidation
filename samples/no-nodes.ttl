@@ -1,0 +1,11 @@
+@prefix res: <http://example.org/resources/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ceterms: <http://purl.org/ctdl/terms/> .
+
+## Despite initial appearances to the contrary there is no data here of a type
+## that the  Registry can use.
+res:79d498f4-224e-4778-9ba7-febd5c038374 a ceterms:CredentialOrganization ;
+  ceterms:ctid "ce-79d498f4-224e-4778-9ba7-febd5c038374" ;
+	ceterms:name "Santa Rosa Junior College"@en-US ;
+  ceterms:description "A Junior College in Santa Rosa"@en-US
+.

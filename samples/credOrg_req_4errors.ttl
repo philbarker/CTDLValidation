@@ -1,0 +1,39 @@
+@prefix res: <http://example.org/resources/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ceterms: <https://purl.org/ctdl/terms/> .
+@prefix orgType: <https://purl.org/ctdl/vocabs/orgType/> .
+@prefix agentSector: <https://purl.org/ctdl/vocabs/agentSector/> .
+@prefix ex: <http://example.org/> .
+
+# has 4 errors in it
+res:79d498f4-224e-4778-9ba7-febd5c038374 a ceterms:CredentialOrganization ;
+# invalid ctid (final block is a char too short)
+  ceterms:ctid "ce-79d498f4-224e-4778-9ba7-febd5c03837" ;
+# no name
+#	ceterms:name "Santa Rosa Junior College"@en-US ;
+  ceterms:description "A Junior College in Santa Rosa"@en-US ;
+  ceterms:agentType [
+    a ceterms:CredentialAlignmentObject ;
+# wrong framework IRI
+    ceterms:framework ex:OrganizationType ;
+    ceterms:targetNode orgType:TrainingProvider ;
+    ceterms:frameworkName "OrganizationType"@en-US ;
+    ceterms:targetNodeName "Education and Training Provider"@en-US
+  ] ;
+  ceterms:agentSectorType [
+    a ceterms:CredentialAlignmentObject ;
+    ceterms:framework <https://credreg.net/ctdl/terms/AgentSector> ;
+    ceterms:targetNode  agentSector:Public ;
+    ceterms:frameworkName "AgentSector"@en-Us ;
+    ceterms:targetNodeName "Public"@en-US
+  ] ;
+	ceterms:address [
+		a ceterms:Place ;
+		ceterms:addressCountry "US" ;
+		ceterms:addressRegion "CA" ;
+		ceterms:addresssLocality "Santa Rosa" ;
+		ceterms:postalCode "95401-4395" ;
+		ceterms:streetAdddess "1501 Mendocino Ave."
+	] ;
+# URL as literal
+	ceterms:subjectWebpage "https://www.santarosa.edu/"  .
