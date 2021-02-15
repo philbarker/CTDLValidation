@@ -8,8 +8,9 @@
 # NB NOT YET FULLY CONFORMANT TO PROFILE
 # only has those properties that have been included in the SHACL file so far
 
-## Validates against Credential Engine Registry Minimum Requirements for
+## does not validate as Credential Engine Registry Minimum Requirements for
 ## Credential Organization.
+## 3 Warnings & 1 error
 
 res:79d498f4-224e-4778-9ba7-febd5c038374 a ceterms:CredentialOrganization ;
   ceterms:ctid "ce-79d498f4-224e-4778-9ba7-febd5c038374" ;
@@ -38,15 +39,19 @@ res:79d498f4-224e-4778-9ba7-febd5c038374 a ceterms:CredentialOrganization ;
 		ceterms:streetAdddess "1501 Mendocino Ave."
 	] ;
 	ceterms:subjectWebpage <https://www.santarosa.edu/> ;
-#optional properties
-  ceterms:socialMedia "http://chirpr.example.com/santarosa"^^xsd:anyURI ;
-  ceterms:keyword "an example college"@en-US;
-  ceterms:image "https://www.santarosa.edu/"^^xsd:anyURI ;
+# optional properties
+# Warning -- just a string, not a URI
+  ceterms:socialMedia "http://chirpr.example.com/santarosa";
+# Warning -- not a langstring
+  ceterms:keyword "an example college";
+# Warning -- IRI not an xsd:anyURI typed Literal
+  ceterms:image <https://www.santarosa.edu/> ;
   ceterms:serviceType [
     a ceterms:CredentialAlignmentObject ;
-    ceterms:framework ceterms:AgentServiceType ;
+# Error wrong framework IRI
+    ceterms:framework ceterms:AgentService ;
     ceterms:targetNode  	serviceType:OfferService ;
-    ceterms:frameworkName "Agent Service Type"@en-Us ;
+    ceterms:frameworkName "Agent Service Type"@en-US ;
     ceterms:targetNodeName "Offer Service"@en-US
   ]
 .

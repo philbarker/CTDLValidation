@@ -1,8 +1,8 @@
-@prefix ceterms: <http://purl.org/ctdl/terms/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ceterms: <https://purl.org/ctdl/terms/> .
 @prefix ceshapes: <https://purl.org/ctdl/shapes/shacl/> .
 # FIXME: not yet finsihed
 
@@ -35,7 +35,7 @@ ceshapes:CredentialOrganizationShape a sh:NodeShape ;
   sh:name "Social Media" ;
   sh:description "Social media access point for an agent or an agent's contact point."@en ;
   sh:path ceterms:socialMedia ;
-  sh:dataKind xsd:anyURI ;
+  sh:datatype xsd:anyURI ;
   sh:minCount 1 ;
   sh:severity sh:Warning ;
 .
@@ -44,7 +44,7 @@ ceshapes:CredentialOrganizationShape a sh:NodeShape ;
   sh:name "keyword" ;
   sh:description "Keyword or key phrase describing relevant aspects of an entity."@en ;
   sh:path ceterms:keyword ;
-  sh:dataKind rdf:langString ;
+  sh:datatype rdf:langString ;
   sh:minCount 1 ;
   sh:severity sh:Warning ;
 .
@@ -53,7 +53,7 @@ ceshapes:CredentialOrganizationShape a sh:NodeShape ;
   sh:name "Image" ;
   sh:description "Image, icon or logo that represents the entity including registered trade or service marks."@en ;
   sh:path ceterms:image ;
-  sh:dataKind rdf:langString ;
+  sh:datatype xsd:anyURI ;
   sh:minCount 1 ;
   sh:severity sh:Warning ;
 .
@@ -62,7 +62,7 @@ ceshapes:CredentialOrganizationShape a sh:NodeShape ;
   sh:name "Service Type" ;
   sh:description "Type of service offered by the agent being described; select from an existing enumeration of such terms."@en ;
   sh:path ceterms:serviceType ;
-  sh:dataKind sh:BlankNodeOrIRI ;
+  sh:nodeKind sh:BlankNodeOrIRI ;
   sh:minCount 1 ;
   sh:severity sh:Warning ;
 .
