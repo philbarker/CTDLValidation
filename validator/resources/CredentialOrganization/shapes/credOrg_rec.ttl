@@ -1,15 +1,102 @@
 @prefix ceterms: <http://purl.org/ctdl/terms/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-# FIXME: not yet done
-<CredentialOrganizationShape>
-  a sh:NodeShape ;
+# FIXME: not yet finsihed
+
+## Main shape for ceterms:CredentialOrganization Nodes
+ceshapes:CredentialOrganizationShape a sh:NodeShape ;
+  rdfs:label "Credential Organization Shape"@en ;
+  rdfs:comment "Shape to validate Credential Organization instances"@en ;
   sh:targetClass ceterms:CredentialOrganization ;
+  sh:property <#socialMedia> ;
+  sh:property <#keyword> ;
+  sh:property <#image> ;
+# TBC
+# propertyShapes not yet done for:
+#  sh:property <#serviceType> ;
+#  sh:property <#parentOrganization> ;
+#  sh:property <#developmentProcess> ;
+#  sh:property <#foundingDate> ;
+#  sh:property <#maintenanceProcess> ;
+#  sh:property <#jurisdiction> ;
+#  sh:property <#administrativeProcess> ;
+#  sh:property <#apppealProcess> ;
+#  sh:property <#complaintProcess> ;
+#  sh:property <#reviewProcess> ;
+#  sh:property <#revocationProcess> ;
+#  sh:or ( <#agentPurpose> <#agentPurposeDescription> ) ;
+#  sh:or ( <#accreditedBy> <#approvedBy> <#recognizedBy> <#regulatedBy>) ;
+.
+
+<#socialMedia> a sh:PropertyShape ;
+  sh:name "Social Media" ;
+  sh:description "Social media access point for an agent or an agent's contact point."@en ;
+  sh:path ceterms:socialMedia ;
+  sh:dataKind xsd:anyURI ;
+  sh:minCount 1 ;
+  sh:severity sh:Warning ;
+.
+
+<#keyword> a sh:PropertyShape ;
+  sh:name "keyword" ;
+  sh:description "Keyword or key phrase describing relevant aspects of an entity."@en ;
+  sh:path ceterms:keyword ;
+  sh:dataKind rdf:langString ;
+  sh:minCount 1 ;
+  sh:severity sh:Warning ;
+.
+
+<#image> a sh:PropertyShape ;
+  sh:name "Image" ;
+  sh:description "Image, icon or logo that represents the entity including registered trade or service marks."@en ;
+  sh:path ceterms:image ;
+  sh:dataKind rdf:langString ;
+  sh:minCount 1 ;
+  sh:severity sh:Warning ;
+.
+
+<#serviceType> a sh:PropertyShape ;
+  sh:name "Service Type" ;
+  sh:description "Type of service offered by the agent being described; select from an existing enumeration of such terms."@en ;
+  sh:path ceterms:serviceType ;
+  sh:dataKind sh:BlankNodeOrIRI ;
+  sh:minCount 1 ;
+  sh:severity sh:Warning ;
 .
 
 ## Validation of Alignment Objects
-# To do agentSectorType alignment object shape
+# optional Alignment Objects
+<#ServiceTypeAlignment> a sh:NodeShape ;
+  rdfs:label "Service Type Alignment Object Shape"@en ;
+  rdfs:comment "Validates Alignment Objects used for serviceType in Credential Organization instances"@en ;
+  sh:targetObjectsOf ceterms:serviceType ;
+  sh:severity sh:Violation ; #if AO is there, must have this shape
+  sh:nodeKind sh:BlankNodeOrIRI ;
+  sh:property <#alignmentObjectType> ;
+  sh:property <#serviceTypeFramework> ;
+  sh:property <#targetNode> ;
+.
 
+# required properties of optional Alignment Objects
+<#serviceTypeFramework> a sh:PropertyShape ;
+  sh:name "framework" ;
+  sh:description "..."@en ;
+  sh:path ceterms:framework ;
+  sh:nodeKind sh:IRI ;
+  sh:hasValue ceterms:AgentServiceType ;
+  sh:severity sh:Violation
+.
+
+<#targetNode> a sh:PropertyShape ;
+  sh:name "target node" ;
+  sh:description "..."@en ;
+  sh:path ceterms:targetNode ;
+  sh:minCount 1 ;
+  sh:nodeKind sh:IRI ;
+  sh:severity sh:Violation ;
+.
+
+# Optional Alignment Objects
 <#AgentTypeAlignment> a sh:NodeShape ;
   rdfs:label "Agent Type Alignment Object Shape"@en ;
   rdfs:comment "Validates Alignment Objects used for agentType in Credential Organization instances"@en ;
@@ -21,9 +108,10 @@
   sh:property <#targetNodeName>
 .
 
+# Optional properties of required & optional Alignment Objects
 <#alignmentObjectType> a sh:PropertyShape ;
   sh:name "type" ;
-  sh:description "Alignment Objects must have type ceterms:CredentialAlignmentObject"@en ;
+  sh:description "Alignment Objects should have type ceterms:CredentialAlignmentObject"@en ;
   sh:path rdf:type ;
   sh:minCount 1 ;
   sh:hasValue ceterms:CredentialAlignmentObject

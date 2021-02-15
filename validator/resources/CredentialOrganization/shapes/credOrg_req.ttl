@@ -90,7 +90,7 @@ ceshapes:CredentialOrganizationShape a sh:NodeShape ;
   sh:path ceterms:agentSectorType ;
   sh:minCount 1 ;
   sh:nodeKind sh:BlankNode ;
-  sh:severity sh:Violation 
+  sh:severity sh:Violation
 .
 
 <#ctid> a sh:PropertyShape ;
@@ -114,7 +114,6 @@ ceshapes:CredentialOrganizationShape a sh:NodeShape ;
 .
 
 ## Validation of Alignment Objects
-# To do agentSectorType alignment object shape
 
 <#AgentTypeAlignment> a sh:NodeShape ;
   rdfs:label "Agent Type Alignment Object Shape"@en ;
@@ -126,12 +125,31 @@ ceshapes:CredentialOrganizationShape a sh:NodeShape ;
   sh:property <#targetNode> ;
 .
 
+<#AgentSectorTypeAlignment> a sh:NodeShape ;
+  rdfs:label "Agent Type Alignment Object Shape"@en ;
+  rdfs:comment "Validates Alignment Objects used for agentType in Credential Organization instances"@en ;
+  sh:targetObjectsOf ceterms:agentSectorType ;
+  sh:severity sh:Violation ;
+  sh:nodeKind sh:BlankNodeOrIRI ;
+  sh:property <#agentSectorTypeFramework> ;
+  sh:property <#targetNode> ;
+.
+
 <#agentTypeFramework> a sh:PropertyShape ;
   sh:name "framework" ;
   sh:description "..."@en ;
   sh:path ceterms:framework ;
   sh:nodeKind sh:IRI ;
   sh:hasValue ceterms:OrganizationType ;
+  sh:severity sh:Violation
+.
+
+<#agentSectorTypeFramework> a sh:PropertyShape ;
+  sh:name "framework" ;
+  sh:description "..."@en ;
+  sh:path ceterms:framework ;
+  sh:nodeKind sh:IRI ;
+  sh:hasValue ceterms:AgentSector ;
   sh:severity sh:Violation
 .
 
