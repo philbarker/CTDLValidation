@@ -1,6 +1,7 @@
 @prefix sh:   <http://www.w3.org/ns/shacl#> .
 @prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix ceterms:  <https://purl.org/ctdl/terms/> .
 @prefix ceshapes: <https://purl.org/ctdl/shapes/shacl/> .
 @base <https://purl.org/ctdl/shapes/shacl/CredentialOrganization> .
@@ -85,7 +86,7 @@ ceshapes:CredentialOrganizationShape a sh:NodeShape ;
 .
 
 <#agentSectorType> a sh:PropertyShape ;
-  sh:name "Agent SectorType" ;
+  sh:name "Agent Sector Type" ;
   sh:description "Type of sociological, economic, or political subdivision served by an organization; select from an existing enumeration of such types." ;
   sh:path ceterms:agentSectorType ;
   sh:minCount 1 ;
