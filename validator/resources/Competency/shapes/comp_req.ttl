@@ -1,5 +1,7 @@
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix ceterms: <http://purl.org/ctdl/terms/> .
 @prefix ceasn: <https://purl.org/ctdlasn/terms/> .
@@ -27,7 +29,7 @@
 ceshapes:Competency a sh:NodeShape ;
   rdfs:label "Competency Shape"@en ;
   rdfs:comment "Shape to validate Competency instances"@en ;
-  sh:targetClass ceterms:CredentialOrganization ;
+  sh:targetClass ceasn:Competency ;
   sh:property <#ctid> ;
   sh:property <#competencyText> ;
   sh:property <#isPartOf> ;
@@ -49,7 +51,7 @@ ceshapes:Competency a sh:NodeShape ;
   sh:description "The text of the competency.";
   sh:path ceasn:competencyText ;
   sh:nodeKind sh:Literal ;
-  sh:datatype rdf:langString
+  sh:datatype rdf:langString ;
   sh:minCount 1 ;
   sh:severity sh:Violation ;
 .
