@@ -8,6 +8,8 @@
 
 ## Check at least one node of type ceterms:CredentialOrganization exists
 <#nodePresent> a sh:NodeShape ;
+  rdfs:label "Existence check"@en ;
+  rdfs:comment "Shape to check there is a Credential Organization instance"@en ;
   sh:targetNode ceterms:CredentialOrganization ;
   sh:property [
     sh:path [ sh:inversePath rdf:type ] ;
