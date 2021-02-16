@@ -30,6 +30,7 @@ ceshapes:CredentialOrganization a sh:NodeShape ;
   sh:property <#subjectWebpage> ;
   sh:property <#ctid> ;
   sh:or ( <#address> <#email> ) ;
+  sh:severity sh:Violation
 .
 
 ## Required Properties
