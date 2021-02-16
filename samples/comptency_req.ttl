@@ -1,0 +1,16 @@
+@prefix res: <http://example.org/resources/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ceterms: <https://purl.org/ctdl/terms/> .
+@prefix orgType: <https://purl.org/ctdl/vocabs/orgType/> .
+@prefix agentSector: <https://purl.org/ctdl/vocabs/agentSector/> .
+@prefix serviceType: <https://purl.org/ctdl/vocabs/serviceType/> .
+
+## Validates against Credential Engine Registry Minimum Requirements for
+## Credential Organization.
+
+res:01234567-89ab-cdef-0123-4567890abcde a ceterms:CredentialOrganization ;
+  ceterms:ctid "01234567-89ab-cdef-0123-4567890abcde" ;
+  ceasn:competencyText "Able to put trousers on, one leg at a time."@en-UK ;
+  ceasn:isPartOf res:Competencies#GettingDressed ;
+  ceasn:dateCreated "2021-02-16"^^xsd:date
+.
