@@ -8,21 +8,30 @@ The SHACL shapes should be useful for other SHACL-based RDF validators.
 ## Directory Structure
 ```
 CTDLValidation
-├── README.md (this file)
+.
+├── README.md
+├── samples (valid and invalid instance data)
+│   ├── comptency_req_4errors.ttl
+│   ├── comptency_req.ttl
+│   ├── credOrg_rec_valid.ttl
+│   ├── credOrg_rec_warnings.ttl
+│   ├── credOrg_req_5errors.ttl
+│   ├── credOrg_req_valid.ttl
+│   ├── NCCER_errors.json
+│   └── no-nodes.ttl
 └── validator
     ├── Dockerfile (Docker config file for isaitb/shacl-validator)
     └── resources
         ├── Competency
         │   ├── config.properties (validator config for Competency shapes)
         │   └── shapes
-        │       ├── comp_rec.ttl (*TBD)
-        │       └── comp_req.ttl (*TBD)
+        │       ├── comp_rec.ttl
+        │       └── comp_req.ttl
         ├── CredentialOrganization
         │   ├── config.properties
         │   └── shapes
-        │       ├── credOrg_rec.ttl (*TBD)
+        │       ├── credOrg_rec.ttl (to be done)
         │       └── credOrg_req.ttl
-        └── QAOrganization (and so on for other CTDL types, *TBD)
-        .
-        .
+        └── QAOrganization
+
 ```
