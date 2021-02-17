@@ -1,0 +1,18 @@
+@prefix res: <http://example.org/resources/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ceterms: <https://purl.org/ctdl/terms/> .
+@prefix ceasn: <https://purl.org/ctdlasn/terms/> .
+
+## Validates against Credential Engine Registry Minimum Requirements for
+## Credential Organization.
+
+res:01234567-89ab-cdef-0123-4567890abcde a ceasn:Competency ;
+# no ctid
+#  ceterms:ctid "01234567-89ab-cdef-0123-4567890abcde" ;
+# text not langString
+  ceasn:competencyText "Able to put trousers on, one leg at a time." ;
+# Literal anyURI, not IRI node
+  ceasn:isPartOf "http://example.org/DressingCompetencies#"^^xsd:anyURI ;
+# not a valid date
+  ceasn:dateCreated "Tuesday Feb 16, 2021" ;
+.
