@@ -4,7 +4,7 @@
 @prefix ceasn: <https://purl.org/ctdlasn/terms/> .
 
 ## Validates against Credential Engine Registry Minimum Requirements for
-## Credential Organization.
+## Competency.
 
 res:01234567-89ab-cdef-0123-4567890abcde a ceasn:Competency ;
   ceterms:ctid "01234567-89ab-cdef-0123-4567890abcde" ;
