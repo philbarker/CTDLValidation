@@ -3,7 +3,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix ceterms: <http://purl.org/ctdl/terms/> .
+@prefix ceterms: <https://purl.org/ctdl/terms/> .
 @prefix ceasn: <https://purl.org/ctdlasn/terms/> .
 @prefix ceshapes: <https://purl.org/ctdl/shapes/shacl/> .
 @base <https://purl.org/ctdl/shapes/shacl/Competency> .
