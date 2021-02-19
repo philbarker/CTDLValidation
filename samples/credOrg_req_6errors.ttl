@@ -24,7 +24,8 @@ res:79d498f4-224e-4778-9ba7-febd5c038374 a ceterms:CredentialOrganization ;
     a ceterms:CredentialAlignmentObject ;
 # wrong framework IRI (not purl)
     ceterms:framework <https://credreg.net/ctdl/terms/AgentSector> ;
-    ceterms:targetNode  agentSector:Public ;
+# invalid agent sector
+    ceterms:targetNode  agentSector:Government ;
     ceterms:frameworkName "AgentSector"@en-Us ;
     ceterms:targetNodeName "Public"@en-US
   ] ;
