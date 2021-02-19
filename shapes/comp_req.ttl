@@ -7,7 +7,7 @@
 @prefix ceasn: <https://purl.org/ctdlasn/terms/> .
 @prefix ceshapes: <https://purl.org/ctdl/shapes/shacl/> .
 @base <https://purl.org/ctdl/shapes/shacl/Competency> .
-# FIXME: not yet done.
+# FIXME: Frameworks not yet done.
 
 ## Combined tests for Competency Framework and Competencies
 
