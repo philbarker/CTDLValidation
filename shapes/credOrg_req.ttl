@@ -181,8 +181,8 @@ ceshapes:CredentialOrganization a sh:NodeShape ;
 <#AgentSector> a sh:NodeShape ;
 sh:name " Agent Sector Concepts" ;
 sh:description "Types of sociological, economic, or political subdivision of society."@en ;
-sh:or ( agentSector:PrivateForProfit ,
-        agentSector:Public ,
+sh:or ( agentSector:PrivateForProfit
+        agentSector:Public 
         agentSector:PrivateNonProfit
       );
 .
