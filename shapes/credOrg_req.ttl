@@ -5,6 +5,7 @@
 @prefix ceterms:  <https://purl.org/ctdl/terms/> .
 @prefix ceshapes: <https://purl.org/ctdl/shapes/shacl/> .
 @prefix agentSector: <https://purl.org/ctdl/vocabs/agentSector/> .
+@prefix orgType: <https://purl.org/ctdl/vocabs/orgType/> .
 @base <https://purl.org/ctdl/shapes/shacl/CredentialOrganization> .
 
 #TODO: add property constraints for address
@@ -150,6 +151,37 @@ ceshapes:CredentialOrganization a sh:NodeShape ;
   sh:nodeKind sh:IRI ;
   sh:hasValue ceterms:OrganizationType ;
   sh:severity sh:Violation
+.
+
+<#agentTypeTargetNode> a sh:Property;
+  sh:name "agent type target node" ;
+  sh:description "For agentType the target node IRI must be in the ceterms:OrgType scheme"@en ;
+  sh:path ceterms:targetNode ;
+  sh:or (
+    [ sh:hasValue orgType:AssessmentBody ]
+    [ sh:hasValue orgType:Business ]
+    [ sh:hasValue orgType:BusinessAssociation ]
+    [ sh:hasValue orgType:CertificationBody ]
+    [ sh:hasValue orgType:Collaborative ]
+    [ sh:hasValue orgType:CoordinatingBody ]
+    [ sh:hasValue orgType:FourYear ]
+    [ sh:hasValue orgType:Government ]
+    [ sh:hasValue orgType:HighSchool ]
+    [ sh:hasValue orgType:LaborUnion ]
+    [ sh:hasValue orgType:Magnet ]
+    [ sh:hasValue orgType:Military ]
+    [ sh:hasValue orgType:NonTraditional ]
+    [ sh:hasValue orgType:Postsecondary ]
+    [ sh:hasValue orgType:PrimarilyOnline ]
+    [ sh:hasValue orgType:ProfessionalAssociation ]
+    [ sh:hasValue orgType:QualityAssurance ]
+    [ sh:hasValue orgType:SecondarySchool ]
+    [ sh:hasValue orgType:Technical ]
+    [ sh:hasValue orgType:TrainingProvider ]
+    [ sh:hasValue orgType:TwoYear ]
+    [ sh:hasValue orgType:Vendor ]
+  );
+  sh:severity sh:Violation ;
 .
 
 <#agentSectorTypeFramework> a sh:PropertyShape ;
