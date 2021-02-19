@@ -1,0 +1,12 @@
+{
+  "@context": "https://credreg.net/ctdl/schema/context/json",
+  "@id": "http://example.org/resources/01234567-89ab-cdef-0123-4567890abcde",
+  "@type": "ceasn:Competency",
+  "error1": "malformed ctid",
+  "ceterms:ctid": "no-01234567-89ab-cdef-0123-4567890abcde",
+  "error2": "not a langString",
+  "ceasn:competencyText": "Able to put trousers on, one leg at a time.",
+  "error3": "incorrect date",
+  "ceasn:dateCreated": "Tuesday Feb 14, 2021",
+  "error4": "no ispart of property"
+}

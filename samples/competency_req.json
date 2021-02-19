@@ -1,0 +1,11 @@
+{
+  "@context": "https://credreg.net/ctdl/schema/context/json",
+  "@id": "http://example.org/resources/01234567-89ab-cdef-0123-4567890abcde",
+  "@type": "ceasn:Competency",
+  "ceterms:ctid": "ce-01234567-89ab-cdef-0123-4567890abcde",
+  "ceasn:competencyText": {
+    "en-uk": "Able to put trousers on, one leg at a time."
+  },
+  "ceasn:dateCreated": "2021-02-16",
+  "ceasn:isPartOf": "http://example.org/resources/DressingCompetencies"
+}
