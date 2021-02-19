@@ -131,6 +131,7 @@ ceshapes:CredentialOrganization a sh:NodeShape ;
   sh:nodeKind sh:BlankNodeOrIRI ;
   sh:property <#agentTypeFramework> ;
   sh:property <#targetNode> ;
+  sh:property <#agentTypeTargetNode> ;
 .
 
 <#AgentSectorTypeAlignment> a sh:NodeShape ;
