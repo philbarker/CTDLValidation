@@ -5,7 +5,7 @@
 @prefix agentSector: <https://purl.org/ctdl/vocabs/agentSector/> .
 @prefix ex: <http://example.org/> .
 
-# has 5 errors in it
+# has 7 errors in it
 res:012398f4-224e-4778-9ba7-4ebd5c038372 a ceterms:CredentialOrganization ;
 # invalid ctid (final block is a char too short)
   ceterms:ctid "ce-012398f4-224e-4778-9ba7-4ebd5c03837" ;
