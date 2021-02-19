@@ -4,6 +4,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix ceterms:  <https://purl.org/ctdl/terms/> .
 @prefix ceshapes: <https://purl.org/ctdl/shapes/shacl/> .
+@prefix agentSector: <https://purl.org/ctdl/vocabs/agentSector/> .
 @base <https://purl.org/ctdl/shapes/shacl/CredentialOrganization> .
 
 #TODO: add property constraints for address
