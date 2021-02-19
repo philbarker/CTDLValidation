@@ -174,10 +174,10 @@ ceshapes:CredentialOrganization a sh:NodeShape ;
   sh:name "agent sector target node" ;
   sh:description "For agentSectorType the target node IRI must be in the ceterms:AgentSector scheme"@en ;
   sh:path ceterms:targetNode ;
-  sh:hasValue sh:or (
-    agentSector:PrivateForProfit
-    agentSector:Public 
-    agentSector:PrivateNonProfit
+  sh:or (
+    [ sh:hasValue agentSector:PrivateForProfit ]
+    [ sh:hasValue agentSector:Public ]
+    [ sh:hasValue agentSector:PrivateNonProfit ]
   );
   sh:severity sh:Violation ;
 .
