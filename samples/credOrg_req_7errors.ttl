@@ -6,19 +6,20 @@
 @prefix ex: <http://example.org/> .
 
 # has 5 errors in it
-res:79d498f4-224e-4778-9ba7-febd5c038374 a ceterms:CredentialOrganization ;
+res:012398f4-224e-4778-9ba7-4ebd5c038372 a ceterms:CredentialOrganization ;
 # invalid ctid (final block is a char too short)
-  ceterms:ctid "ce-79d498f4-224e-4778-9ba7-febd5c03837" ;
+  ceterms:ctid "ce-012398f4-224e-4778-9ba7-4ebd5c03837" ;
 # no name
-#	ceterms:name "Santa Rosa Junior College"@en-US ;
-  ceterms:description "A Junior College in Santa Rosa"@en-US ;
+#	ceterms:name "No name"@en-US ;
+  ceterms:description "Imaginary invalid data"@en-US ;
   ceterms:agentType [
     a ceterms:CredentialAlignmentObject ;
 # wrong framework IRI
     ceterms:framework ex:OrganizationType ;
-    ceterms:targetNode orgType:TrainingProvider ;
+# invalid orgType, not in required framework
+    ceterms:targetNode orgType:Department ;
     ceterms:frameworkName "OrganizationType"@en-US ;
-    ceterms:targetNodeName "Education and Training Provider"@en-US
+    ceterms:targetNodeName "Department"@en-US
   ] ;
   ceterms:agentSectorType [
     a ceterms:CredentialAlignmentObject ;
