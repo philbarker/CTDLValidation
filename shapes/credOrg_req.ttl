@@ -175,6 +175,7 @@ ceshapes:CredentialOrganization a sh:NodeShape ;
   sh:path ceterms:targetNode ;
   sh:hasValue <#AgentSector> ;
   sh:severity sh:Violation ;
+.
 
 <#AgentSector> a sh:NodeShape ;
 sh:name " Agent Sector Concepts" ;
