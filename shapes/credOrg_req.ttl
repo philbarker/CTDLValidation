@@ -98,7 +98,7 @@ ceshapes:CredentialOrganization a sh:NodeShape ;
   sh:path ceterms:agentSectorType ;
   sh:minCount 1 ;
   sh:nodeKind sh:BlankNode ;
-  sh:severity sh:Violation
+  sh:severity sh:Violation ;
 .
 
 <#ctid> a sh:PropertyShape ;
@@ -108,7 +108,7 @@ ceshapes:CredentialOrganization a sh:NodeShape ;
   sh:minCount 1 ;
   sh:nodeKind sh:Literal ;
   sh:pattern "ce-[0-9a-f]{8}(-[0-9a-f]{4}){3}-[0-9a-f]{12}" ;
-  sh:severity sh:Violation
+  sh:severity sh:Violation ;
 .
 
 ## Validation of Addresses
@@ -151,10 +151,10 @@ ceshapes:CredentialOrganization a sh:NodeShape ;
   sh:path ceterms:framework ;
   sh:nodeKind sh:IRI ;
   sh:hasValue ceterms:OrganizationType ;
-  sh:severity sh:Violation
+  sh:severity sh:Violation ;
 .
 
-<#agentTypeTargetNode> a sh:Property;
+<#agentTypeTargetNode> a sh:Property ;
   sh:name "agent type target node" ;
   sh:description "For agentType the target node IRI must be in the ceterms:OrgType scheme"@en ;
   sh:path ceterms:targetNode ;
@@ -181,7 +181,7 @@ ceshapes:CredentialOrganization a sh:NodeShape ;
     [ sh:hasValue orgType:TrainingProvider ]
     [ sh:hasValue orgType:TwoYear ]
     [ sh:hasValue orgType:Vendor ]
-  );
+  ) ;
   sh:severity sh:Violation ;
 .
 
@@ -191,7 +191,7 @@ ceshapes:CredentialOrganization a sh:NodeShape ;
   sh:path ceterms:framework ;
   sh:nodeKind sh:IRI ;
   sh:hasValue ceterms:AgentSector ;
-  sh:severity sh:Violation
+  sh:severity sh:Violation ;
 .
 
 <#targetNode> a sh:PropertyShape ;
