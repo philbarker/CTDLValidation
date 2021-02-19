@@ -6,6 +6,8 @@
 @prefix ceshapes: <https://purl.org/ctdl/shapes/shacl/> .
 @base <https://purl.org/ctdl/shapes/shacl/CredentialOrganization> .
 
+#TODO: add property constraints for address
+
 ## Check at least one node of type ceterms:CredentialOrganization exists
 <#nodePresent> a sh:NodeShape ;
   rdfs:label "Existence check"@en ;
@@ -137,6 +139,7 @@ ceshapes:CredentialOrganization a sh:NodeShape ;
   sh:nodeKind sh:BlankNodeOrIRI ;
   sh:property <#agentSectorTypeFramework> ;
   sh:property <#targetNode> ;
+  sh:property <#agentSectorTypeTargetNode> ;
 .
 
 <#agentTypeFramework> a sh:PropertyShape ;
@@ -164,4 +167,20 @@ ceshapes:CredentialOrganization a sh:NodeShape ;
   sh:minCount 1 ;
   sh:nodeKind sh:IRI ;
   sh:severity sh:Violation ;
+.
+
+<#agentSectorTypeTargetNode> a sh:Property;
+  sh:name "agent sector target node" ;
+  sh:description "For agentSectorType the target node IRI must be in the ceterms:AgentSector scheme"@en ;
+  sh:path ceterms:targetNode ;
+  sh:hasValue <#AgentSector> ;
+  sh:severity sh:Violation ;
+
+<#AgentSector> a sh:NodeShape ;
+sh:name " Agent Sector Concepts" ;
+sh:description "Types of sociological, economic, or political subdivision of society."@en ;
+sh:or ( agentSector:PrivateForProfit ,
+        agentSector:Public ,
+        agentSector:PrivateNonProfit
+      );
 .
