@@ -34,6 +34,8 @@ ceshapes:CredentialOrganization a sh:NodeShape ;
   sh:property <#subjectWebpage> ;
   sh:property <#ctid> ;
   sh:or ( <#address> <#email> ) ;
+  sh:property <#address_type> ;
+  sh:property <#email_type> ;
   sh:severity sh:Violation
 .
 
@@ -70,7 +72,12 @@ ceshapes:CredentialOrganization a sh:NodeShape ;
    sh:description "Particulars describing the location of the place." ;
    sh:path ceterms:address ;
    sh:minCount 1 ;
-   sh:node sh:BlankNode ;
+   sh:severity sh:Violation ;
+.
+
+<#address_type>  a  sh:PropertyShape ;
+   sh:path ceterms:address ;
+   sh:nodeKind sh:BlankNode ;
    sh:severity sh:Violation ;
 .
 
@@ -79,7 +86,14 @@ ceshapes:CredentialOrganization a sh:NodeShape ;
    sh:description "Email address of the organization or person." ;
    sh:path ceterms:email ;
    sh:minCount 1 ;
+   sh:severity sh:Violation ;
+.
+
+<#email_type> a  sh:PropertyShape ;
+   sh:path ceterms:email ;
    sh:nodeKind sh:Literal ;
+   sh:datatype xsd:string ;
+   sh:pattern ".+@.+" ; # won't catch all errors
    sh:severity sh:Violation ;
 .
 
