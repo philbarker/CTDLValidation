@@ -10,13 +10,14 @@ The SHACL shapes should be useful for other SHACL-based RDF validators.
 CTDLValidation
 ├── README.md (this file)
 ├── samples (valid and invalid instance data)
+│   ├── competency_req_4errors.json
+│   ├── competency_req.json
 │   ├── comptency_req_4errors.ttl
 │   ├── comptency_req.ttl
 │   ├── credOrg_rec_valid.ttl
 │   ├── credOrg_rec_warnings.ttl
-│   ├── credOrg_req_5errors.ttl
+│   ├── credOrg_req_7errors.ttl
 │   ├── credOrg_req_valid.ttl
-│   ├── NCCER_errors.json
 │   └── no-nodes.ttl
 ├── shapes (development versions of shapes)
 │   ├── comp_rec.ttl
@@ -28,12 +29,6 @@ CTDLValidation
     └── resources
         ├── Competency
         │   └── config.properties (validator config for Competency shapes)
-        ├── CredentialOrganization
-        │   └── config.properties
-        └── QAOrganization
-        .
-        .
-        . (and so on)
-
-
+        └── CredentialOrganization
+            └── config.properties
 ```
