@@ -1,0 +1,9 @@
+@prefix res: <http://example.org/resources/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ceterms: <https://purl.org/ctdl/terms/> .
+@prefix orgType: <https://purl.org/ctdl/vocabs/orgType/> .
+@prefix agentSector: <https://purl.org/ctdl/vocabs/agentSector/> .
+@prefix ex: <http://example.org/> .
+
+# Missing all required properties (names all wrong), should generate 7 errors
+res:ce-01234567-89ab-cdef-g012-3456789abcde a ceterms:CredentialOrganization .

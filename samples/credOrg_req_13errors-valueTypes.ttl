@@ -1,0 +1,27 @@
+@prefix res: <http://example.org/resources/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ceterms: <https://purl.org/ctdl/terms/> .
+@prefix orgType: <https://purl.org/ctdl/vocabs/orgType/> .
+@prefix agentSector: <https://purl.org/ctdl/vocabs/agentSector/> .
+@prefix ex: <http://example.org/> .
+
+# All required properties have wrong value type, should generate 8 errors
+res:ce-01234567-89ab-cdef-g012-3456789abcde a ceterms:CredentialOrganization ;
+# ctid is wrong format
+  ceterms:ctid "ctid-01234567-1234-1234-1234-1234567890ab" ;
+# name not a LangString
+  ceterms:name "Invalid college" ;
+# descrip not a LangString
+  ceterms:description "Imaginary invalid data" ;
+# agentType not a BNode
+  ceterms:agentType orgType:TrainingProvider ;
+# agentSectorType not a BNode
+  ceterms:agentSectorType agentSector:Public ;
+# address not a BNode
+	ceterms:address ex:Sunnydale ;
+# email invalid format, not xsd:string
+  ceterms:email "mailto:Sunnydale" ;
+  ceterms:email "mail@Sunnydale.edu"@en-US ;
+# Literal/anyURI not IRI
+	ceterms:subjectWebpage "https://www.example.edu/"^^xsd:anyURI
+.
