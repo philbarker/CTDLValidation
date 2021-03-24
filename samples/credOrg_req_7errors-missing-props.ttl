@@ -5,5 +5,5 @@
 @prefix agentSector: <https://purl.org/ctdl/vocabs/agentSector/> .
 @prefix ex: <http://example.org/> .
 
-# Missing all required properties (names all wrong), should generate 7 errors
+# Missing all required properties, should generate 7 errors
 res:ce-01234567-89ab-cdef-g012-3456789abcde a ceterms:CredentialOrganization .

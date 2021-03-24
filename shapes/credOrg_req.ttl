@@ -27,7 +27,8 @@ ceshapes:CredentialOrganization a sh:NodeShape ;
   rdfs:label "Credential Organization Shape"@en ;
   rdfs:comment "Shape to validate Credential Organization instances"@en ;
   sh:targetClass ceterms:CredentialOrganization ;
-  sh:property <#name> ;
+  sh:property <#name_type> ;
+  sh:property <#name_unique> ;
   sh:property <#description> ;
   sh:property <#agentType> ;
   sh:property <#agentSectorType> ;
@@ -40,12 +41,20 @@ ceshapes:CredentialOrganization a sh:NodeShape ;
 .
 
 ## Required Properties
-<#name> a sh:PropertyShape ;
+<#name_type> a sh:PropertyShape ;
     sh:name "Name" ;
     sh:description "Name or title of the resource." ;
     sh:path ceterms:name ;
     sh:datatype rdf:langString ;
+    sh:severity sh:Violation
+.
+
+<#name_unique> a sh:PropertyShape ;
+    sh:name "Name" ;
+    sh:description "Name or title of the resource." ;
+    sh:path ceterms:name ;
     sh:minCount 1 ;
+    sh:maxCount 1 ;
     sh:severity sh:Violation
 .
 

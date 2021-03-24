@@ -11,6 +11,10 @@ res:ce-01234567-89ab-cdef-g012-3456789abcde a ceterms:CredentialOrganization ;
   ceterms:ctid "ctid-01234567-1234-1234-1234-1234567890ab" ;
 # name not a LangString
   ceterms:name "Invalid college" ;
+# name repeated
+  ceterms:name "Invalid college"@en-US ;
+# name repeated
+  ceterms:name "Invalid school"@en-US ;
 # descrip not a LangString
   ceterms:description "Imaginary invalid data" ;
 # agentType not a BNode
