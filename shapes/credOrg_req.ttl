@@ -4,10 +4,10 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix ceterms:  <https://purl.org/ctdl/terms/> .
 @prefix ceshapes: <https://raw.githubusercontent.com/philbarker/CTDLValidation/main/shapes/> .
-@prefix cecommonshapes: <https://raw.githubusercontent.com/philbarker/CTDLValidation/main/shapes/common.ttl#> .
+@prefix cecommonshapes: <https://raw.githubusercontent.com/philbarker/CTDLValidation/reference-shapes/shapes/common.ttl#> .
 @prefix agentSector: <https://purl.org/ctdl/vocabs/agentSector/> .
 @prefix orgType: <https://purl.org/ctdl/vocabs/orgType/> .
-@base <https://raw.githubusercontent.com/philbarker/CTDLValidation/main/shapes/credOrg_req.ttl> .
+@base <https://raw.githubusercontent.com/philbarker/CTDLValidation/reference-shapes/shapes/credOrg_req.ttl> .
 
 #TODO: add property constraints for address
 
