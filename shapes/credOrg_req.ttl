@@ -29,7 +29,8 @@ ceshapes:CredentialOrganization a sh:NodeShape ;
   sh:targetClass ceterms:CredentialOrganization ;
   sh:property <#name_type> ;
   sh:property <#name_unique> ;
-  sh:property <#description> ;
+  sh:property <#description_type> ;
+  sh:property <#description_unique> ;
   sh:property <#agentType> ;
   sh:property <#agentSectorType> ;
   sh:property <#subjectWebpage> ;
@@ -58,12 +59,21 @@ ceshapes:CredentialOrganization a sh:NodeShape ;
     sh:severity sh:Violation
 .
 
-<#description> a sh:PropertyShape ;
+<#description_type> a sh:PropertyShape ;
     sh:name "Description" ;
     sh:description "Statement, characterization or account of the entity." ;
     sh:path ceterms:description ;
     sh:datatype rdf:langString ;
+    sh:minLength 10 ;
+    sh:severity sh:Violation ;
+.
+
+<#description_unique> a sh:PropertyShape ;
+    sh:name "Description" ;
+    sh:description "Statement, characterization or account of the entity." ;
+    sh:path ceterms:description ;
     sh:minCount 1 ;
+    sh:maxCount 1 ;
     sh:severity sh:Violation ;
 .
 
