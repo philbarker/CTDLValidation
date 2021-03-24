@@ -9,7 +9,7 @@
 @prefix orgType: <https://purl.org/ctdl/vocabs/orgType/> .
 @base <https://raw.githubusercontent.com/philbarker/CTDLValidation/reference-shapes/shapes/common.ttl> .
 
-# Common property shapes, i.e. ones that are used frequently
+# Common property shapes, i.e. ones that are used frequently.
 
 <#name_type> a sh:PropertyShape ;
     sh:name "Name" ;
