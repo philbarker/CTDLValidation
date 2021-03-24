@@ -7,7 +7,7 @@
 @prefix cecommonshapes: <https://raw.githubusercontent.com/philbarker/CTDLValidation/reference-shapes/shapes/common.ttl#> .
 @prefix agentSector: <https://purl.org/ctdl/vocabs/agentSector/> .
 @prefix orgType: <https://purl.org/ctdl/vocabs/orgType/> .
-@base <https://raw.githubusercontent.com/philbarker/CTDLValidation/reference-shapes/shapes/credOrg_req.ttl> .
+@base <https://raw.githubusercontent.com/philbarker/CTDLValidation/reference-shapes/shapes/common.ttl> .
 
 # Common property shapes, i.e. ones that are used frequently
 
