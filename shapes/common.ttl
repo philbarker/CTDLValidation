@@ -3,10 +3,11 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix ceterms:  <https://purl.org/ctdl/terms/> .
-@prefix ceshapes: <https://purl.org/ctdl/shapes/shacl/> .
+@prefix ceshapes: <https://raw.githubusercontent.com/philbarker/CTDLValidation/main/shapes/> .
+@prefix cecommonshapes: <https://raw.githubusercontent.com/philbarker/CTDLValidation/reference-shapes/shapes/common.ttl#> .
 @prefix agentSector: <https://purl.org/ctdl/vocabs/agentSector/> .
 @prefix orgType: <https://purl.org/ctdl/vocabs/orgType/> .
-@base <https://purl.org/ctdl/shapes/shacl/CredentialOrganization> .
+@base <https://raw.githubusercontent.com/philbarker/CTDLValidation/reference-shapes/shapes/credOrg_req.ttl> .
 
 # Common property shapes, i.e. ones that are used frequently
 
