@@ -1,0 +1,28 @@
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ceterms:  <https://purl.org/ctdl/terms/> .
+@prefix ceshapes: <https://purl.org/ctdl/shapes/shacl/> .
+@prefix agentSector: <https://purl.org/ctdl/vocabs/agentSector/> .
+@prefix orgType: <https://purl.org/ctdl/vocabs/orgType/> .
+@base <https://purl.org/ctdl/shapes/shacl/CredentialOrganization> .
+
+# Common property shapes, i.e. ones that are used frequently
+
+<#name_type> a sh:PropertyShape ;
+    sh:name "Name" ;
+    sh:description "Name or title of the resource." ;
+    sh:path ceterms:name ;
+    sh:datatype rdf:langString ;
+    sh:severity sh:Violation
+.
+
+<#name_unique> a sh:PropertyShape ;
+    sh:name "Name" ;
+    sh:description "Name or title of the resource." ;
+    sh:path ceterms:name ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:severity sh:Violation
+.

@@ -3,10 +3,11 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix ceterms:  <https://purl.org/ctdl/terms/> .
-@prefix ceshapes: <https://purl.org/ctdl/shapes/shacl/> .
+@prefix ceshapes: <https://raw.githubusercontent.com/philbarker/CTDLValidation/main/shapes/> .
+@prefix cecommonshapes: <https://raw.githubusercontent.com/philbarker/CTDLValidation/main/shapes/common.ttl#> .
 @prefix agentSector: <https://purl.org/ctdl/vocabs/agentSector/> .
 @prefix orgType: <https://purl.org/ctdl/vocabs/orgType/> .
-@base <https://purl.org/ctdl/shapes/shacl/CredentialOrganization> .
+@base <https://raw.githubusercontent.com/philbarker/CTDLValidation/main/shapes/credOrg_req.ttl> .
 
 #TODO: add property constraints for address
 
@@ -27,8 +28,8 @@ ceshapes:CredentialOrganization a sh:NodeShape ;
   rdfs:label "Credential Organization Shape"@en ;
   rdfs:comment "Shape to validate Credential Organization instances"@en ;
   sh:targetClass ceterms:CredentialOrganization ;
-  sh:property <#name_type> ;
-  sh:property <#name_unique> ;
+  sh:property cecommonshapes:name_type ;
+  sh:property cecommonshapes:name_unique ;
   sh:property <#description_type> ;
   sh:property <#description_unique> ;
   sh:property <#agentType> ;
@@ -42,23 +43,6 @@ ceshapes:CredentialOrganization a sh:NodeShape ;
 .
 
 ## Required Properties
-<#name_type> a sh:PropertyShape ;
-    sh:name "Name" ;
-    sh:description "Name or title of the resource." ;
-    sh:path ceterms:name ;
-    sh:datatype rdf:langString ;
-    sh:severity sh:Violation
-.
-
-<#name_unique> a sh:PropertyShape ;
-    sh:name "Name" ;
-    sh:description "Name or title of the resource." ;
-    sh:path ceterms:name ;
-    sh:minCount 1 ;
-    sh:maxCount 1 ;
-    sh:severity sh:Violation
-.
-
 <#description_type> a sh:PropertyShape ;
     sh:name "Description" ;
     sh:description "Statement, characterization or account of the entity." ;
