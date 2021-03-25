@@ -3,11 +3,11 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix ceterms: <https://purl.org/ctdl/terms/> .
-@prefix ceshapes: <https://purl.org/ctdl/shapes/shacl/> .
+@base <https://raw.githubusercontent.com/philbarker/CTDLValidation/main/shapes/credOrg_rec.ttl> .
 # FIXME: not yet finsihed
 
 ## Main shape for ceterms:CredentialOrganization Nodes
-ceshapes:CredentialOrganizationShape a sh:NodeShape ;
+<#CredentialOrganizationShape> a sh:NodeShape ;
   rdfs:label "Credential Organization Shape"@en ;
   rdfs:comment "Shape to validate Credential Organization instances"@en ;
   sh:targetClass ceterms:CredentialOrganization ;

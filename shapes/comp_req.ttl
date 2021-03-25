@@ -5,8 +5,7 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix ceterms: <https://purl.org/ctdl/terms/> .
 @prefix ceasn: <https://purl.org/ctdlasn/terms/> .
-@prefix ceshapes: <https://purl.org/ctdl/shapes/shacl/> .
-@base <https://purl.org/ctdl/shapes/shacl/Competency> .
+@base <https://raw.githubusercontent.com/philbarker/CTDLValidation/main/shapes/comp_rec.ttl> .
 # FIXME: Frameworks not yet done.
 
 ## Combined tests for Competency Framework and Competencies
@@ -26,7 +25,7 @@
 .
 
 ## Main shape for ceasn:Competency Nodes
-ceshapes:Competency a sh:NodeShape ;
+<#Competency> a sh:NodeShape ;
   rdfs:label "Competency Shape"@en ;
   rdfs:comment "Shape to validate Competency instances"@en ;
   sh:targetClass ceasn:Competency ;
